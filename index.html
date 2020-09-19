@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js'></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    <link rel='stylesheet' href='css/style.css'>
+    <title>Calendar</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mese</h1>
+
+            <div id="actual-time" class="time">
+                <span id="time-actual">Orario attuale</span>
+                <span id="day-actual"></span>
+            </div>
+        </header>
+
+        <main>
+            <ul class="month-wrapper">
+
+            </ul>
+        </main>
+    </div>
+    <script id="day-template" type="text/x-handlebars-template">
+        <li class="day" data-date="{{date-complete}}">{{day}} {{month}}</li>
+
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

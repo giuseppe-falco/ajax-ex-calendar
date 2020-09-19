@@ -1,0 +1,30 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+
+.time{
+	position:fixed;
+	top:20px;
+	right:20px;
+
+	display: inline-block;
+}
+
+#time-actual{
+	display:block;
+}
+
+.container{
+	margin-left:80px;
+}
+
+.holiday{
+	color:red;
+}
+
+header h1{
+	text-transform: capitalize;
+}
