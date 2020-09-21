@@ -31,33 +31,24 @@ $(document).ready(function(){
 
     // Definisco l'evento click sul pulsante PREV
     $("#prev").click(function() {
-      // che funziona solo se startMonth è maggiore di 0
       if (month > 1) {
-        // Seleziono il mese precedente
         month -= 1;
-        // Svuoto la pagina
         $(".month-wrapper").empty();
-        // Effettuo nuovamente il render
         renderPage();
       } else {
-        // Definisco un alert nel caso l'utente prema il pulsante PREV su Gennaio 2018
+        //alert mese precedente a Gennaio 2018
         alert("Nessun dato precedente a questa data!");
       }
     });
   
     // Definisco l'evento click sul pulsante NEXT
     $("#next").click(function() {
-      // che funziona solo se startMonth è minore di 11
       if (month < 12) {
-        // Seleziono il mese successivo
         month += 1;
-        
-        // Svuoto la pagina
         $(".month-wrapper").empty();
-        // Effettuo nuovamente il render
         renderPage();
       } else {
-        // Definisco un alert nel caso l'utente prema il pulsante NEXT su Dicembre 2018
+        //alert mese successivo a  Dicembre 2018
         alert("Nessun dato successivo a questa data!");
       }
     });
@@ -78,7 +69,6 @@ $(document).ready(function(){
     };
 
     function renderPage() {
-      console.log(month);
       
         // Effettuo la chiamata Ajax verso l'api contenente le festività dell'anno 2018
         $.ajax(
