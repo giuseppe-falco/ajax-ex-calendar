@@ -51,7 +51,6 @@ $(document).ready(function(){
       if (month < 12) {
         // Seleziono il mese successivo
         month += 1;
-        console.log(month);
         
         // Svuoto la pagina
         $(".month-wrapper").empty();
@@ -91,8 +90,6 @@ $(document).ready(function(){
             },
             "method": "GET",
             "success": function(data) {
-              console.log(data.response);
-              
               printHolidays(data.response);
             },
             "error": function (error) {
@@ -141,7 +138,7 @@ $(document).ready(function(){
 
                 $(".day[data-date='"+holidaysDate+"']").addClass("holiday");
                 var test = $(".day[data-date='"+holidaysDate+"']").text();
-                $(".day[data-date='"+holidaysDate+"']").text(test + " - " + holidaysName);
+                $(".day[data-date='"+holidaysDate+"']").html(test + "<span> " + holidaysName + "</span>");
             }
         }
 
