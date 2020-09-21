@@ -12,13 +12,18 @@
 </head>
 <body>
     <div class="container">
+        <div id="actual-time" class="time">
+            <span id="time-actual">Orario attuale</span>
+            <span id="day-actual"></span>
+        </div>
         <header>
+            <button id="prev">
+                &lt;- Precedente
+            </button>
             <h1>Mese</h1>
-
-            <div id="actual-time" class="time">
-                <span id="time-actual">Orario attuale</span>
-                <span id="day-actual"></span>
-            </div>
+            <button id="next">
+                Successivo -&gt;
+            </button>
         </header>
 
         <main>
@@ -29,7 +34,6 @@
     </div>
     <script id="day-template" type="text/x-handlebars-template">
         <li class="day" data-date="{{date-complete}}">{{day}} {{month}}</li>
-
     </script>
     <script src="js/script.js"></script>
 </body>

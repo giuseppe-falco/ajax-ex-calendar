@@ -18,13 +18,20 @@
 }
 
 .container{
-	margin-left:80px;
+	width: 50%;
+	margin: auto;
 }
 
 .holiday{
 	color:red;
 }
 
-header h1{
+header {
+	margin:50px 0;
 	text-transform: capitalize;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
+
