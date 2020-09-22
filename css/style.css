@@ -38,10 +38,9 @@ header {
 }
 
 main{
-	display: flex;
 }
 
-ul{
+.month-wrapper{
 	width: 100%;
 	height: 60vh;
 
@@ -49,7 +48,7 @@ ul{
 	flex-wrap: wrap;
 }
 
-li{
+.month-wrapper li{
 	list-style: none;
 	width: calc(100% / 7);
 	height: calc(100% / 4);
@@ -62,10 +61,36 @@ li{
 	overflow: hidden;
 }
 
-li>span{
+.month-wrapper li span{
 	display: inline-block;
 	margin-top:20px;
 	max-width: 90%;
 	padding: 5px;
 	font-weight: 400;
+}
+
+.day-name-wrapper{
+
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.day-name li {
+	
+}
+
+.day-name-wrapper li{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	list-style: none;
+	width: calc(100% / 7);
+	height: 40px;
+	line-height: 10px;
+	border:1px solid #000;
+
+	text-align: center;
+	overflow: hidden;
+	
 }

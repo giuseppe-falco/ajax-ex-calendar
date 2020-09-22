@@ -93,31 +93,75 @@ $(document).ready(function(){
 
       var date = {
         "year": year,
-        "month": month - 1
+        "month": month - 1,
+        "day":1
       }
 
       var momentDate = moment(date);
-      
+      var weekDay = momentDate.weekday();
       var dayInMonth = momentDate.daysInMonth();
       
         //stampa mese in pagina
         $("header h1").text(momentDate.format("MMMM"))
-        //stampa giorni in pagina    
-        for (var i=1; i<=dayInMonth; i++) {
-
-            if (i<10) {
-                i = "0" + i;
+         
+        
+        console.log(weekDay);
+              
+        var test = "<li></li>"
+        switch (weekDay) {
+          case 1:
+            for(var i=0;i<1;i++){
+              $(".month-wrapper").prepend(test);
             }
-            var context = {
-                "day": i,
-                "month": momentDate.format("MMMM"),
-                "date-complete":momentDate.format("YYYY-MM-" + i)
+            break;
+          case 2:
+            for(var i=0;i<2;i++){
+              $(".month-wrapper").prepend(test);
             }
-            var html = template(context);
-                        
-            $(".month-wrapper").append(html);
+            break;
+          case 3:
+            for(var i=0;i<3;i++){
+              $(".month-wrapper").prepend(test);
+            }
+            break;
+          case 4:
+            for(var i=0;i<4;i++){
+              $(".month-wrapper").prepend(test);
+            }
+            break;
+          case 5:
+            for(var i=0;i<5;i++){
+                $(".month-wrapper").prepend(test);
+            }
+            break;
+          case 6:
+            for(var i=0;i<6;i++){
+                $(".month-wrapper").prepend(test);
+            }
+            break;
+  
+                    
 
         }
+        
+        
+        //stampa giorni in pagina    
+          for (var i=1; i<=dayInMonth; i++) {
+
+              if (i<10) {
+                  i = "0" + i;
+              }
+              var context = {
+                  "day": i,
+                  "month": momentDate.format("MMMM"),
+                  "date-complete":momentDate.format("YYYY-MM-" + i)
+              }
+              var html = template(context);
+                      
+             
+              $(".month-wrapper").append(html);
+
+          }
 
         
         if (holidays.length > 0) {
@@ -126,9 +170,10 @@ $(document).ready(function(){
                 var holidaysName = holidays[i].name;
                 var holidaysDate = holidays[i].date;
 
-                $(".day[data-date='"+holidaysDate+"']").addClass("holiday");
-                var test = $(".day[data-date='"+holidaysDate+"']").text();
-                $(".day[data-date='"+holidaysDate+"']").html(test + "<span> " + holidaysName + "</span>");
+                var dayHtml = $(".day[data-date='"+holidaysDate+"']");
+                dayHtml.addClass("holiday");
+                var test = dayHtml.text();
+                dayHtml.html(test + "<br><span> " + holidaysName + "</span>");
             }
         }
 
